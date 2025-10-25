@@ -1,0 +1,577 @@
+:root {
+  --primary-yellow: #ffd700;
+  --text-color: #333;
+  --bg-color: #f4f4f4;
+}
+
+#Home {
+  background-image: url(./../assets/hero/bg.jpg);
+  /* background-image: url(./../assets/about/Aboutbg.jpg); */
+
+  background-position: center;
+  background-size: cover;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-attachment: fixed;
+  width: 100vw;
+  min-width: 100%;
+}
+/* HOME */
+
+.mainbody {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  margin-top: -5%;
+}
+
+.Page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100vh;
+  margin-bottom: 20px;
+}
+
+.HomeImages {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+img[alt="discount"] {
+  width: 140px;
+  position: absolute;
+  margin-left: 56%;
+  animation: float 2s ease-in-out infinite alternate;
+}
+
+img[alt="burger"] {
+  width: 720px;
+  max-width: 70%;
+  border-radius: 10%;
+  animation: slide-in 1s ease-out;
+  transition: transform 0.3s ease;
+}
+
+.texts {
+  width: 30%;
+  animation: fade-in 1.5s ease-out;
+}
+
+.next {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.next img {
+  width: 20px;
+  transition: transform 0.3s ease;
+}
+
+.next button {
+  position: absolute;
+  margin-top: -60px;
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-yellow);
+  color: var(--text-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  margin-left: -5%;
+}
+
+/* .next button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+} */
+
+.order {
+  width: 120px;
+  height: 50px;
+  margin-top: 20px;
+  color: var(--text-color);
+  background-color: var(--primary-yellow);
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.order:hover {
+  background-color: #ffc700;
+  transform: translateY(-3px);
+}
+
+.discount span {
+  position: absolute;
+  margin-top: 50px;
+  margin-left: -10%;
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: black;
+}
+
+.bigtext {
+  font-size: 55px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.bigtext span {
+  /* display: block; */
+  transform: translateY(20px);
+  animation: word-slide-in 1s ease-out forwards;
+}
+
+.smalltext {
+  line-height: 1.2; /* Adjust line spacing */
+  margin: 0; /* Remove default margins */
+  text-align: justify; /* Align text properly */
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+  margin-top: 1rem;
+}
+
+.bigtext::first-line {
+  color: var(--primary-yellow);
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes word-slide-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .mainbody {
+    flex-direction: column;
+  }
+
+  .texts,
+  .HomeImages {
+    width: 100%;
+  }
+
+  .bigtext {
+    font-size: 36px;
+  }
+}
+/* ABOUT */
+/* General styling for the About section */
+#About {
+  position: relative;
+  box-sizing: border-box;
+  /* top: 20px; */
+  margin: 0;
+  /* padding: 20px; */
+  min-width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
+    url(./../assets/about/Aboutbg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Background image animation */
+.aboutbg img {
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  z-index: -1;
+  /* animation: kenburns-bottom 10s ease-out both; */
+}
+
+/* Title styling */
+.aboutline {
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 30%;
+  margin-top: 10%;
+  width: 50%;
+  border-bottom: 4px solid orange;
+  /* padding-bottom: 10px; */
+  /* animation: slideInDown 1s ease-in-out; */
+}
+
+/* Description styling */
+.descryption {
+  margin-top: 10px;
+  margin-left: 10%;
+  text-align: center;
+  overflow-wrap: break-word;
+  font-size: 18px;
+  max-width: 80%;
+  opacity: 0.9;
+  /* animation: fadeInUp 1.2s ease-in-out; */
+}
+.explore {
+  margin-left: 40%;
+  margin-top: 3%;
+}
+/* Explore button */
+.explore a {
+  /* display: inline-block; */
+  padding: 12px 24px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.explore a:hover {
+  transform: scale(1.1);
+  /* box-shadow: 0px 4px 10px rgba(255, 165, 0, 0.7); */
+}
+
+/* Cards section */
+.cards {
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* justify-content: center;
+  align-items: center; */
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 50vh;
+  margin-top: 5%;
+  /* padding: 20px; */
+}
+
+.cards div {
+  margin-left: 0px;
+  background: orange;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(255, 165, 0, 0.7);
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 50px;
+}
+
+.cards div:hover {
+  transform: translateY(-10px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .aboutline {
+    font-size: 24px;
+    width: 70%;
+  }
+  .descryption {
+    font-size: 16px;
+    max-width: 90%;
+  }
+  .cards {
+    flex-direction: row;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes kenburns-bottom {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: scale(1.1) translateY(-10px);
+  }
+}
+/* CONTACT */
+#Contact {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  background-image: url(./../assets/footer/contactbg.jpg);
+  filter: brightness(0.6) contrast(1.5) saturate(1.8);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: 100%;
+  padding: 60px;
+  background-attachment: fixed;
+}
+.contactinfo {
+  text-align: center;
+  /* border: 2px solid red; */
+}
+.guarantee {
+  font-size: 15px;
+  font-weight: bold;
+}
+.instant {
+  font-size: 35px;
+  font-weight: bold;
+}
+.further {
+  font-size: 13px;
+  width: 30%;
+  text-align: center;
+  margin-left: 35%;
+}
+.call {
+  padding: 12px 24px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-top: 15px;
+  width: 20%;
+  border-radius: 20px;
+  transition: 1s;
+  font-size: 15px;
+}
+.call:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 2px 1px yellow;
+}
+.footer {
+}
+#Menu {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  background: linear-gradient(to right, white, rgb(247, 247, 128));
+  /* border: 2px solid black; */
+  min-width: 98.5vw;
+}
+.menutext {
+  text-align: center;
+  margin-top: 20px;
+}
+.menutitle {
+  font-size: 30px;
+  font-weight: bolder;
+  color: black;
+}
+.menudescryption {
+  font-size: 12px;
+  /* border: 2px solid yellow; */
+  width: 40vw;
+  text-align: center;
+  margin-left: 30%;
+}
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  /* border: 2px solid yellow; */
+  margin-top: 10px;
+  margin-bottom: 0px;
+  bottom: 0;
+}
+/* BLOGS */
+/* General Styles */
+#Blogs {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+  min-width: 100%;
+  background: linear-gradient(to right, rgb(235, 144, 144), white);
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Brand Section */
+.brands {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.previous,
+.next {
+  height: 30px;
+  margin-top: 10%;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.previous:hover,
+.next:hover {
+  transform: scale(1.1);
+}
+
+/* Brand Images */
+img[alt="brand"] {
+  width: 150px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s;
+}
+
+img[alt="brand"]:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Brand Title */
+.brandtitle {
+  text-align: center;
+  color: black;
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Opinion Section */
+.opinion {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-top: 5%;
+  background-image: url(./../assets/blog/reviews.jpg);
+  border: 3px solid yellow;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Reviews */
+.reviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+.reviews p {
+  width: 60%;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Person Image */
+img[alt="person"] {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid yellow;
+  transition: transform 0.3s ease-in-out;
+}
+
+img[alt="person"]:hover {
+  transform: scale(1.1);
+}
+
+/* Back Button */
+.back {
+  align-self: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  background-color: yellow;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+
+.back:hover {
+  background-color: #ffcc00;
+  transform: scale(1.1);
+}
